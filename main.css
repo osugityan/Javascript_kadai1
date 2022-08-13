@@ -1,0 +1,26 @@
+h3{
+  margin-bottom: 45px;
+  margin-left: 10px;
+}
+
+.text{
+  margin-left: 30px;
+  font-size: 30px;
+  font-weight: 540;
+  margin-bottom: 45px;
+}
+
+.time::after{
+  content:":";
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.m_sec::after{
+  display: none;
+}
+
+input{
+  height: 40px;
+}
