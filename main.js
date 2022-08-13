@@ -1,8 +1,8 @@
 $(document).ready(function(){
   var m_sec = 0;
   var sec = 0;
-  var tens_sec = 0;
   var min = 0;
+  var hour = 0;
   var timer
   
   $(".start").click(function(){
@@ -24,13 +24,13 @@ $(document).ready(function(){
   $(".reset").click(function(){
     m_sec = 0;
     sec = 0;
-    tens_sec = 0;
     min = 0;
+    hour = 0;
     
     $(".m_sec").html(m_sec);
     $(".sec").html(sec);
-    $(".tens_sec").html(tens_sec);
     $(".min").html(min);
+    $(".hour").html(hour);
     
     clearInterval(timer);
     
@@ -42,8 +42,8 @@ $(document).ready(function(){
   function countUp (){
     $(".m_sec").html(m_sec);
     $(".sec").html(sec);
-    $(".tens_sec").html(tens_sec);
     $(".min").html(min);
+    $(".hour").html(hour);
     
     m_sec += 1;
     
@@ -52,14 +52,14 @@ $(document).ready(function(){
       sec += 1;
     }
     
-    if(sec > 9) {
+    if(sec > 59) {
       sec = 0;
-      tens_sec += 1;
+      min += 1;
     }
     
-    if(tens_sec > 5){
-      tens_sec = 0;
-      min += 1;
+    if(min > 59){
+      min = 0;
+      hour += 1;
     }
   }
   });
